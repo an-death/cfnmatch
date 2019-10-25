@@ -1,6 +1,6 @@
 # cython: language_level=3
 from cpython cimport bool
-from c_fnmatch cimport (
+from fnmatch cimport (
     fnmatch,
     FNM_NOMATCH,
     FNM_FILE_NAME,
