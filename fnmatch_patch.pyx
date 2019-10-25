@@ -1,3 +1,4 @@
+# cython: language_level=3
 from cpython cimport bool
 from c_fnmatch cimport (
     fnmatch,
