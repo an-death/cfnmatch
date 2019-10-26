@@ -3,8 +3,8 @@ from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 
 setup(
-    name='fnmatch_patch',
-    ext_modules=cythonize(["fnmatch_patch.pyx"]),
+    name='cfnmatch',
+    ext_modules=cythonize(["cfnmatch.pyx"]),
     cmdclass={'build_ext': build_ext, 'inplace': True},
     requires=['Cython'],
     version='1.0.0',
