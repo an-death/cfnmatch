@@ -10,7 +10,6 @@ from fnmatch cimport (
     FNM_LEADING_DIR,
     FNM_CASEFOLD,
     )
-import fnmatch as python_fnmatch_module
 
 
 cpdef bool cfnmatch(str domain, str pattern, int flag=FNM_CASEFOLD):
@@ -25,5 +24,8 @@ cpdef bool cfnmatch(str domain, str pattern, int flag=FNM_CASEFOLD):
         raise ValueError(f'cannot match for pattern {pattern}')
     return False
 
-# patch python module
-python_fnmatch_module.fnmatch = cfnmatch
+
+cpdef patch():
+    # patch python module
+    import fnmatch as python_fnmatch_module
+    python_fnmatch_module.fnmatch = cfnmatch
